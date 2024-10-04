@@ -20,7 +20,7 @@
 
 
 ## FEATURES
-This bot is a modification of the predecessor ***`dreaded-md`*** but we changed the module to commonJs. It has group management features, some media commands, image manipulation commands as well as AI and many other features incorporated.
+This bot is a modification of the predecessor ***`charity-md`*** but we changed the module to commonJs. It has group management features, some media commands, image manipulation commands as well as AI and many other features incorporated.
 
 Our AI features use random APIs to run, so sometimes they may be down.
 
