@@ -2,7 +2,7 @@
 
 
 const {
-  default: dreadedConnect,
+  default: charityConnect,
   useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
@@ -43,7 +43,7 @@ async function startDreaded() {
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
 version: [2, 3000, 1015901307],
-        browser: [`DREADED`,'Safari','3.0'],
+        browser: [`CHARITY`,'Safari','3.0'],
 fireInitQueries: false,
             shouldSyncHistoryMessage: true,
             downloadHistory: true,
@@ -118,7 +118,7 @@ if(presence === 'online')
       if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       
       m = smsg(client, mek, store);
-      require("./dreaded")(client, m, chatUpdate, store);
+      require("./charity")(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
@@ -298,7 +298,7 @@ message += `▞▚▞▚▞▚▞▚▞▚▞▚▞`
 
 }
 
-startDreaded();
+startcharity();
 
 
 module.exports = startDreaded;
