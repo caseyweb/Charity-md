@@ -38,3 +38,4 @@ commandFiles.forEach(file => {
 });
 
 module.exports = { commands, totalCommands };
+
