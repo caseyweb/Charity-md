@@ -1,8 +1,8 @@
-/* this is the main file, edit with caution */
+/* this is the main file */
 
 
 const {
-  default: charityConnect,
+  default: dreadedConnect,
   useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
@@ -20,6 +20,9 @@ const { exec, spawn, execSync } = require("child_process");
 const axios = require("axios");
 const chalk = require("chalk");
 const figlet = require("figlet");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 10000;
 const _ = require("lodash");
 const PhoneNumber = require("awesome-phonenumber");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif');
@@ -43,7 +46,7 @@ async function startDreaded() {
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
 version: [2, 3000, 1015901307],
-        browser: [`CHARITY`,'Safari','3.0'],
+        browser: [`DREADED`,'Safari','3.0'],
 fireInitQueries: false,
             shouldSyncHistoryMessage: true,
             downloadHistory: true,
@@ -118,7 +121,7 @@ if(presence === 'online')
       if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       
       m = smsg(client, mek, store);
-      require("./charity")(client, m, chatUpdate, store);
+      require("./dreaded")(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
@@ -237,7 +240,7 @@ if(presence === 'online')
             return DateTime.now().setZone('Africa/Nairobi').toLocaleString(DateTime.TIME_SIMPLE);
         };
 
-        let message = `Holla, ${getGreeting()},\n\nYou are connected to CHARITY bot. 📡 \n\n`;
+        let message = `Holla, ${getGreeting()},\n\nYou are connected to dreaded bot. 📡 \n\n`;
 
         message += `👤 𝑩𝑶𝑻𝑵𝑨𝑴𝑬:- ${botname}\n`;
 message += `🔓 𝑴𝑶𝑫𝑬:- ${mode}\n`;
@@ -298,7 +301,12 @@ message += `▞▚▞▚▞▚▞▚▞▚▞▚▞`
 
 }
 
-startcharity();
+app.get("/", (req, res) => {
+    res.send("Bot is active...");
+});
+app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
+
+startDreaded();
 
 
 module.exports = startDreaded;
@@ -310,4 +318,3 @@ fs.watchFile(file, () => {
   delete require.cache[file];
   require(file);
 });
-
