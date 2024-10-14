@@ -1,5 +1,5 @@
 {
-  "name": "CHARITY MD",
+  "name": "DREADED-V2",
   "version": "2.0.0",
   "description": "WhatsApp Multi Device Bot",
   "main": "index.js",
@@ -104,10 +104,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caseyweb/Charity-md.git"
+    "url": "git+https://github.com/Fortunatusmokaya/dreaded-v2.git"
   },
   "bugs": {
-    "url": "https://github.com/caseyweb/Charity-md/issues"
+    "url": "https://github.com/Fortunatusmokaya/dreaded-v2/issues"
   },
-  "homepage": "https://github.com/caseyweb/Charity-md#readme"
+  "homepage": "https://github.com/Fortunatusmokaya/dreaded-v2#readme"
 }
